@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "fishmod",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "BTW Fishing and Seeds Tweak",
+  "description": "Changes fishing and seed behaviour",
   "authors": [
-    "Me!"
+    "Kied22"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Kied22/fabric-example-mod"
   },
 
   "license": "CC0-1.0",
-  "icon": "modid/icon.png",
+  "icon": "fishmod/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -26,7 +26,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "fishmod.mixins.json"
   ],
 
   "depends": {

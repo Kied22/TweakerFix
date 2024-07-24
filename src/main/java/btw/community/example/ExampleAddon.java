@@ -7,7 +7,7 @@ public class ExampleAddon extends BTWAddon {
     private static ExampleAddon instance;
 
     private ExampleAddon() {
-        super("Example Name", "0.1.0", "Ex");
+        super("BTW Fishing and Seed Mod", "0.1.0", "FASM");
     }
 
     @Override
