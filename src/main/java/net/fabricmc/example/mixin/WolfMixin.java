@@ -19,24 +19,24 @@ public abstract class WolfMixin {
 
 	@Inject(method = "isBreedingItem", at = @At("TAIL"), cancellable = true)
 	private void injectIsBreedingItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-		if (stack !=null && (stack.itemID == BTWItems.rawMysteryMeat.itemID || stack.itemID == BTWItems.cookedMysteryMeat.itemID || stack.itemID == Item.fishRaw.itemID)) {
+		if (stack != null && (stack.itemID == BTWItems.rawMysteryMeat.itemID || stack.itemID == BTWItems.cookedMysteryMeat.itemID || stack.itemID == Item.fishRaw.itemID || stack.itemID == Item.fishCooked.itemID)) {
 			cir.setReturnValue(true);
 		}
 	}
+
 	@Inject(method = "isEdibleItem", at = @At("HEAD"), cancellable = true)
 	private void isEdibleItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-		if (stack.getItem() == Item.fishRaw) {
-			// Set the return value to true if the item is fishRaw
+		if (stack.getItem() == Item.fishRaw || stack.getItem() == Item.fishCooked) {
 			cir.setReturnValue(true);
 		}
 	}
+
 	@Inject(method = "onEat", at = @At("HEAD"), cancellable = true)
 	public void onEat(Item food, CallbackInfo ci) {
 		WolfEntity wolf = (WolfEntity) (Object) this;
 		World world = wolf.worldObj;
 
-		// Custom behavior for CreeperOysterItem
-		if (food.itemID == BTWItems.rawMysteryMeat.itemID || food.itemID == BTWItems.cookedMysteryMeat.itemID || food.itemID == Item.fishRaw.itemID) {
+		if (food.itemID == BTWItems.rawMysteryMeat.itemID || food.itemID == BTWItems.cookedMysteryMeat.itemID || food.itemID == Item.fishRaw.itemID || food.itemID == Item.fishCooked.itemID) {
 
 			wolf.heal(food.getWolfHealAmount());
 
@@ -53,10 +53,8 @@ public abstract class WolfMixin {
 						MathHelper.floor_double(wolf.posZ), 0);
 			}
 
-			// Trigger breeding behavior
 			wolf.onEatBreedingItem();
 
-			// Cancel the rest of the method execution
 			ci.cancel();
 		}
 	}
