@@ -3,8 +3,8 @@
   "id": "fishmod",
   "version": "${version}",
 
-  "name": "BTW Fishing and Seeds Tweak",
-  "description": "Changes fishing and seed behaviour",
+  "name": "BTW Fishing, Animal and Seed Tweaks",
+  "description": "Changes fishing speed, animal breeding foods and seed drops",
   "authors": [
     "Kied22"
   ],
