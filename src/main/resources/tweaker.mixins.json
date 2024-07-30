@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "jordan.tweaker.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "LightningBoltEntityMixin",
+    "HardcoreSpawnUtilsMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
