@@ -1,8 +1,9 @@
-# Tweaker
+# TweakerFix
 
-Want to be able to change HC Spawn mechanics? Want to disable lightning fires? This addon is for you!
+Based on https://github.com/BTW-Community/Tweaker by dddoss
 
-[Download](https://github.com/BTW-Community/Tweaker/releases/latest)
+Fixed issue that wouldn't allow you to modify the config/properties and change the minSpawnRadius, this is due to minSpawnRadius being verified after maxSpawnRadius.
+
 
 ## Installation
 **Fabric is required!**
